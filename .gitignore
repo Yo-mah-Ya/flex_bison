@@ -1,0 +1,14 @@
+# Ignore all
+*
+# Unignore all directories
+!/**/
+# Unignore all with extensions
+!*.*
+!Makefile
+
+.DS_Store
+*.o
+*.tab.c
+*.tab.h
+*.yy.c
+*.output
