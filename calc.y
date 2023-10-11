@@ -7,13 +7,14 @@ extern int yylex();
 extern void yyerror(const char* s);
 %}
 
-
+// This union will be defined as YYSTYPE
 /* This unionv members can be accessed as members of "yylval", so which is gonna be like "llval.ival" */
 %union {
 	int ival;
 	float fval;
 }
 
+// tokens are terminal symbols
 // These tokens can be used both flex and bison
 %token<ival> T_INT
 %token<fval> T_FLOAT
@@ -23,6 +24,7 @@ extern void yyerror(const char* s);
 %left T_PLUS T_MINUS
 %left T_MULTIPLY T_DIVIDE
 
+// types are non-terminal symbols
 // member names inside <> should be written in %union.
 %type<ival> expression
 %type<fval> mixed_expression
